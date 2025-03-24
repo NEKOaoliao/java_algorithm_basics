@@ -1,6 +1,6 @@
 package class12;
 
-public class Code3_isBalancedLearn {
+public class Code03_isBalancedLearn {
     
     public static class Node {
         Node left;
