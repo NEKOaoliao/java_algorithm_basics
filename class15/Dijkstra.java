@@ -47,6 +47,7 @@ public class Dijkstra {
         while(!pq.isEmpty()) {
             GNode chosenNode = pq.poll().getNode();
             if (usedNodes.contains(chosenNode)) continue;
+            usedNodes.add(chosenNode); // minimize computation usage
             
             for (GEdge edge: chosenNode.edges) {
                 GNode desNode = edge.endNode;
@@ -63,7 +64,7 @@ public class Dijkstra {
                     distMap.put(desNode, newDist);
                 }
             }
-            usedNodes.add(chosenNode);
+            // usedNodes.add(chosenNode); //right but may do useless computation
         }
         return distMap;
     }
